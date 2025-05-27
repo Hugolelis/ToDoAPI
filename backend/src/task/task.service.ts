@@ -3,5 +3,9 @@ import { PrismaService } from 'src/database/prisma.service';
 
 @Injectable()
 export class TaskService {
-    constructor(prisma: PrismaService){}
+    constructor(private prisma: PrismaService){}
+
+    teste() {
+        return this.prisma.task.findMany()
+    }
 }
