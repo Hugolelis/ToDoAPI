@@ -4,9 +4,4 @@ import { TaskService } from './task.service';
 @Controller('task')
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
-
-  @Get()
-  getTasks() {
-    return this.taskService.teste()
-  }
 }
