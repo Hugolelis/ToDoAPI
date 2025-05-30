@@ -28,18 +28,18 @@ export class AuthService {
             password: hashedPassword
         }
 
-        await this.prisma.user.create({ data: userData })
+        const user = await this.prisma.user.create({ data: userData })
 
-        const token = await this.JwtService.generateVerificationToken(userData.name, userData.email)
+        const token = await this.JwtService.generateVerificationToken(user.id, user.name, user.email)
 
         return {
-            data: userData,
+            data: user,
             token
         }
     }   
 
     async loginService(body: LoginDTO) {
-        const user = await this.prisma.user.findUnique({ where: { email: body.email }})
+        const user = await this.prisma.user.findUnique({ where: { email: body.email, deletedAt: null }})
 
         if(!user) throw new UnauthorizedException('Email is not registered.')
 
@@ -47,7 +47,7 @@ export class AuthService {
 
         if(!checkPassword) throw new UnauthorizedException('Incorrect password.')
 
-        const token = await this.JwtService.generateVerificationToken(user.name, user.email)
+        const token = await this.JwtService.generateVerificationToken(user.id, user.name, user.email)
 
         const safeUser: SafeUserEntitie = {
             name: user.name,
