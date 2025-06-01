@@ -27,21 +27,23 @@ This is a RESTful API designed to handle user task management with full account 
 
 ```bash
 📦 backend
-|  | ├── public/
-|      | └── imgs/
-|        | ├── others
-|        | └── users
-|  | └──  src/
-|  | ├── connection/
-|  | ├── controllers/
-|  | ├── helpers/
-|      | ├── interfaces
-|      | ├── types
-|      | └── utils
-|  | ├── middlewares/
-|  | ├── models/
-|  | ├── routes/
-|  | └── server.ts
+├── 📁 dist/
+├── 📁 generated/
+├── 📁 node_modules/
+├── 📁 prisma/
+│   └── schema.prisma
+├── 📁 src/
+│   ├── 📁 app/
+│   ├── 📁 common/
+│   │   ├── 📁 interceptors/
+│   │   ├── 📁 jwt/
+│   │   └── 📁 public/
+│   ├── 📁 database/
+│   ├── 📁 resources/
+│   │   ├── 📁 auth/
+│   │   ├── 📁 task/
+│   │   └── 📁 user
+│   └── main.ts
 
 ```
 ---
