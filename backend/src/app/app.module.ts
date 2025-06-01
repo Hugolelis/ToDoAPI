@@ -28,6 +28,11 @@ export class AppModule implements NestModule {
           { path: 'api/user/delete', method: RequestMethod.ALL },
           { path: 'api/user/update', method: RequestMethod.ALL },
 
+          { path: 'api/task/userTasks', method: RequestMethod.ALL },
+          { path: 'api/task/create', method: RequestMethod.ALL },
+          { path: 'api/task/complete/:id', method: RequestMethod.ALL },
+          { path: 'api/task/update/:id', method: RequestMethod.ALL },
+          { path: 'api/task/delete/:id', method: RequestMethod.ALL },
       );
   }
 }
