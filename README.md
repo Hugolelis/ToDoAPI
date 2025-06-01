@@ -42,7 +42,7 @@ This is a RESTful API designed to handle user task management with full account 
 │   ├── 📁 resources/
 │   │   ├── 📁 auth/
 │   │   ├── 📁 task/
-│   │   └── 📁 user
+│   │   └── 📁 user/
 │   └── main.ts
 
 ```
