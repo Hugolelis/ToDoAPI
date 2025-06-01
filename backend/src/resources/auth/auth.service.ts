@@ -1,10 +1,12 @@
 import { BadRequestException, ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
+
 import { PrismaService } from 'src/database/prisma.service';
 import { JwtService } from 'src/common/jwt/jwt.service';
 import * as bcrypt from 'bcrypt';
 
 import { LoginDTO } from './dto/login-dto';
 import { RegisterDTO } from './dto/register-dto';
+
 import { UserCreateEntitie } from './entities/user-create-entitie';
 import { SafeUserEntitie } from './entities/safe-user-entitie';
 

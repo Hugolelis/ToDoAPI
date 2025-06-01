@@ -1,5 +1,7 @@
-import { Body, Controller, Delete, Patch, Req } from '@nestjs/common';
+import { Body, Controller, Patch, Req } from '@nestjs/common';
+
 import { UserService } from './user.service';
+
 import { UpdateDTO } from './dto/update-dto';
 import { DeleteDTO } from './dto/delete-dto';
 
