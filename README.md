@@ -1,4 +1,4 @@
-# 🚀 Authentication API
+# 🚀 To-Do API
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg) ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -9,15 +9,15 @@
 
 ## 📚 About
 
-This is a RESTful API designed to handle user authentication, including registration, login, JWT-based session management, and secure password hashing using bcrypt. It supports modern best practices and is easily integrable with frontend applications or third-party services.
+This is a RESTful API designed to handle user task management with full account support. It allows users to register, log in, and manage their personal tasks securely. The system uses JWT for authentication and bcrypt for password hashing, ensuring user data is handled with best security practices.
 
 ---
 
 ## 🧰 Tech Stack
 
-- ⚙️ Node.js & Fastify 
+- ⚙️ Node.js & NesJs 
 - 📘 TypeScript  
-- 🗃️ MongoDB  
+- 🗃️ MySQL 
 - 🔐 JWT for Authentication
 - 🧂 bcrypt for Password Hashing 
 
@@ -57,19 +57,22 @@ This is a RESTful API designed to handle user authentication, including registra
 
 ###  👤 UserController
 
-| Method | Route            | Description             |
-| ------ | ---------------- | ----------------------- |
-| PUT    | /api/user/update | Update user information |
-| DELETE | /api/user/delete | Delete the current user |
+| Method | Route            | Description                  |
+| ------ | ---------------- | ---------------------------- |
+| PATCH  | /api/user/update | Update user information      |
+| PATCH  | /api/user/delete | Soft delete the current user |
 
 
 ###  🛡️ AdminController 
 
-| Method | Route                      | Description                            |
-| ------ | -------------------------- | -------------------------------------- |
-| GET    | /api/admin/findAdminUsers  | Retrieve all users with admin access   |
-| GET    | /api/admin/findAllUsers    | Retrieve all registered users          |
-| POST   | /api/admin/giveAccessLevel | Assign or update a user's access level |
+| Method | Route                   | Description                              |
+| ------ | ----------------------- | ---------------------------------------- |
+| GET    | /api/task/userTasks     | Retrieve all tasks belonging to the user |
+| POST   | /api/task/create        | Create a new task                        |
+| PATCH  | /api/task/complete/\:id | Mark a task as completed                 |
+| PATCH  | /api/task/update/\:id   | Update task details                      |
+| DELETE | /api/task/delete/\:id   | delete a task                            |
+
 
 ---
 
@@ -78,8 +81,8 @@ This is a RESTful API designed to handle user authentication, including registra
 ### 🔧 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Hugolelis/AuthAPI.git
-cd AuthAPI
+git clone https://github.com/Hugolelis/ToDoAPI.git
+cd ToDoAPI
 ```
 
 ### 📦 2. Install Dependencies
@@ -91,10 +94,9 @@ npm install
 ### ⚙️ 3. Set Up Environment Variables (.env)
 
 ```bash
-DB_URI=mongodb://localhost:27017/authAPI
-PORT=3000
-HOST=0.0.0.0
-SECRET=secreta123
+DATABASE_URL="mysql://root@localhost:3306/todoapi"
+PORT="3000"
+JWT_SECRET="secreto123"
 ```
 
 ### ▶️ 4. Start the Server
