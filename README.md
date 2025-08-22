@@ -2,28 +2,27 @@
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg) ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-
-> Powerful and scalable backend API built with modern technologies.
-
----
-
-## 📚 About
-
-This is a RESTful API designed to handle user task management with full account support. It allows users to register, log in, and manage their personal tasks securely. The system uses JWT for authentication and bcrypt for password hashing, ensuring user data is handled with best security practices.
+> API poderosa e escalável construída com tecnologias modernas.
 
 ---
 
-## 🧰 Tech Stack
+## 📚 Sobre
 
-- ⚙️ Node.js & NesJs 
+Esta é uma API RESTful projetada para gerenciar tarefas de usuários com suporte completo de contas. Permite que os usuários se registrem, façam login e gerenciem suas tarefas pessoais de forma segura. O sistema utiliza JWT para autenticação e bcrypt para hash de senhas, garantindo que os dados dos usuários sejam tratados com as melhores práticas de segurança.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- ⚙️ Node.js & NestJS  
 - 📘 TypeScript  
-- 🗃️ MySQL 
-- 🔐 JWT for Authentication
-- 🧂 bcrypt for Password Hashing 
+- 🗃️ MySQL  
+- 🔐 JWT para autenticação  
+- 🧂 bcrypt para hash de senhas  
 
 ---
 
-## 📂 Project Structure
+## 📂 Estrutura do Projeto
 
 ```bash
 📦 backend
@@ -44,56 +43,57 @@ This is a RESTful API designed to handle user task management with full account 
 │   │   ├── 📁 task/
 │   │   └── 📁 user/
 │   └── main.ts
-
 ```
 ---
 
-## 📬 Main Endpoints and Features
+## 📬 Principais Endpoints e Funcionalidades
 
 ### 🔐 AuthController
 
-| Method | Route              | Description                   |
+| Método | Rota               | Descrição                     |
 | ------ | ------------------ | ----------------------------- |
-| POST   | /api/auth/register | Register a new user           |
-| POST   | /api/auth/login    | Authenticate and login a user |
+| POST   | /api/auth/register | Registrar um novo usuário     |
+| POST   | /api/auth/login    | Autenticar e logar um usuário |
+
 
 ###  👤 UserController
 
-| Method | Route            | Description                  |
-| ------ | ---------------- | ---------------------------- |
-| PATCH  | /api/user/update | Update user information      |
-| PATCH  | /api/user/delete | Soft delete the current user |
+| Método | Rota             | Descrição                        |
+| ------ | ---------------- | -------------------------------- |
+| PATCH  | /api/user/update | Atualizar informações do usuário |
+| PATCH  | /api/user/delete | Soft delete do usuário atual     |
+
 
 
 ###  🛡️ AdminController 
 
-| Method | Route                   | Description                              |
-| ------ | ----------------------- | ---------------------------------------- |
-| GET    | /api/task/userTasks     | Retrieve all tasks belonging to the user |
-| POST   | /api/task/create        | Create a new task                        |
-| PATCH  | /api/task/complete/\:id | Mark a task as completed                 |
-| PATCH  | /api/task/update/\:id   | Update task details                      |
-| DELETE | /api/task/delete/\:id   | delete a task                            |
+| Método | Rota                    | Descrição                             |
+| ------ | ----------------------- | ------------------------------------- |
+| GET    | /api/task/userTasks     | Recuperar todas as tarefas do usuário |
+| POST   | /api/task/create        | Criar uma nova tarefa                 |
+| PATCH  | /api/task/complete/\:id | Marcar uma tarefa como concluída      |
+| PATCH  | /api/task/update/\:id   | Atualizar detalhes de uma tarefa      |
+| DELETE | /api/task/delete/\:id   | Deletar uma tarefa                    |
 
 
 ---
 
-## 🖥️ Running the Project
+## 🖥️ Rodando o Projeto
 
-### 🔧 1. Clone the Repository
+### 🔧 1. Clonar o Repositório
 
 ```bash
 git clone https://github.com/Hugolelis/ToDoAPI.git
 cd ToDoAPI
 ```
 
-### 📦 2. Install Dependencies
+### 📦 2. Instalar Dependências
 
 ```bash
 npm install
 ```
 
-### ⚙️ 3. Set Up Environment Variables (.env)
+### ⚙️ 3. Configurar Variáveis de Ambiente (.env)
 
 ```bash
 DATABASE_URL="mysql://root@localhost:3306/todoapi"
@@ -101,7 +101,7 @@ PORT="3000"
 JWT_SECRET="secreto123"
 ```
 
-### ▶️ 4. Start the Server
+### ▶️ 4. Iniciar o Servidor
 
 ```bash
 npm start
